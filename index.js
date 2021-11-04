@@ -33,9 +33,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
- console.log(createMenuItem('Nachos', 5, 'Appetizer'));
- console.log(createMenuItem('Baja Blast', 2, 'Drinks'));
- console.log(createMenuItem('Cookie', 3, 'Dessert'));
+ console.log(createMenuItem('Task 1', 'Nachos', 5, 'Appetizer'));
+ console.log(createMenuItem('Task 1', 'Baja Blast', 2, 'Drinks'));
+ console.log(createMenuItem('Task 1', 'Cookie', 3, 'Dessert'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -54,8 +54,16 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
-}
+  discount: function(customer){
+    if (customer === 'teacher' || customer === 'student'){
+      return this.price - (this.price * 0.25);
+    } else if (customer === 'public'){
+        return this.price - (this.price * 0.1);
+      }
+    }
+  }
+console.log('task 2', burger.discount('teacher'));
+console.log('task 2', burger.discount('public'));
 
 
 
